@@ -1,3 +1,4 @@
+"use strict"
 let num1=2154;
 let num2=458;
 let gcd=0;
