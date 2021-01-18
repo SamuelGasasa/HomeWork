@@ -1,3 +1,4 @@
+"use strict"
 let num1=3;
 let num2=-7;
 let num3=2;
