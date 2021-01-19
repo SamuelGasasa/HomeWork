@@ -1,38 +1,35 @@
 // "use strict"
 function happyNumber(num)
 {
-let firstNum;
-let counter=1;
-let sum=0;
-let a=1;
-let i=0;
-let checker=[];
+let temp=num; 
+const repeat=[];
+while(temp!==1 && !repeat.includes(temp)){
+    repeat.push(temp);
+    let sum=0;
+    console.log(temp);
+    while(temp>0){
+        const digit=temp%10;
+        sum += digit**2;
+        temp=Math.floor(temp/10);
+    }
+    temp=sum;
+}
+if (temp===1){
+    return true;
+}
+else {
+    return false;
+}
+}
+let first5='';
+let count=0;
+for(let i=0; i< 5;i++)
+{
+    while(happyNumber(count)===false){
+        count++;
+    }
+    first5+=count +' ';
+    count++;
 
-while((num)/10>=1)
-{
-    counter++;
 }
-while(num!==1 && checker[num] !==true)
-{
-    checker[num]=true;
-    while(i<counter)
-    {
-        firstNum=Math.floor((num/1*a)%10);
-        sum=sum+Math.pow(firstNum,2);
-        a=a*10;
-        i++;
-    }  
-
-}
-if(checker[num]===true)
-return true;
-else
-return false;
-}
-var cnt = 5;
-var num = 1;
-var f5 = '';
-if(happyNumber[1]===true)
-{
-    console.log('hello');
-} 
+console.log('the first 5 happy numbers are: ' + first5);
